@@ -1,0 +1,96 @@
+{% extends "DataSort/layout.html" %}
+{% load staticfiles %}
+{%block content%}
+<html>
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="{% static 'dist/js/vendor/jquery.min.js' %}"></script>
+  <style>
+  button {
+        top: 10px;
+        left: 10px;
+        z-index: 1;
+        }
+      .graph{
+        align: center;
+      }
+
+  </style>
+</head>
+
+<body>
+    <br/>
+    <div class="row">
+
+        <div class="col-xs-6 col-xs-offset-2">
+            <button data-toggle="dropdown" class="btn btn-block btn-lg btn-primary dropdown-toggle" type="button">Sort Preset Data Points <span class="caret"></span></button>
+            <ul role="menu" class="dropdown-menu">
+              <li><a href="/plot/10/">10 Points</a></li>
+              <li><a href="/plot/50/">50 Points</a></li>
+              <li><a href="/plot/100/">100 Points</a></li>
+            </ul>
+        </div>
+
+        <div id="output"></div>
+           <div class="col-xs-2 ">
+            <a class="btn btn-block btn-lg btn-info" onclick="javascript:animate_frames({{frames}});">Sort</a>
+          <!--<a href="#fakelink" class="btn btn-block btn-lg btn-info">Sort</a>-->
+        </div>
+
+    </div>
+
+  <div id="graph" class="graph" style=""></div>
+  <!--<button onclick="javascript:animate_frames({{frames}});">Sort!</button>-->
+  <script>
+    $('#post_btn').on('click',function(e){
+            e.preventDefault();
+        	$.ajax({
+            type: "POST",
+            url: "/plot/",
+            data :{
+                arr: $('#arr').val(),
+                csrfmiddlewaretoken: $('input[name=csrfmiddlewaretoken]').val()
+            },
+            success: function(json){
+                alert("Success");
+                window.location.href = '/plot/';
+                animate_frames({{frames}});
+            }
+      });
+ });
+
+    Plotly.plot('graph', [{
+    x: {{x}},
+    y: {{y}},
+    mode: 'lines+markers',
+    line: {simplify: false},
+    }],
+    {
+        xaxis: {range: [0, {{x}}]},
+        yaxis: {range: [{{y.min}}, {{y.max}}]}
+    }
+    );
+
+    function animate_frames(frames){
+        for (var i = 0; i < frames.length; i++) {
+            var y = frames[i];
+            randomize(y);
+        }
+    }
+
+    function randomize(y_new) {
+        Plotly.animate('graph', {
+          data: [{y: y_new}],
+          traces: [0],
+          layout: {}
+        }, {
+          transition: {
+            duration: 3000,
+            easing: 'linear'
+          }
+        })
+    }
+  </script>
+</body>
+{%endblock%}
+</html>

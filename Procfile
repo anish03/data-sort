@@ -1,0 +1,1 @@
+web: gunicorn Sort.wsgi --log-file -
