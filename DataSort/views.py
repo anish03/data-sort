@@ -12,7 +12,7 @@ def index(request):
 def plot(request,n):
     current_url = request.get_full_path()
     n = current_url.split('/')
-    array = np.random.randint(0,5,int(n[-2]))
+    array = np.random.randint(0,25,int(n[-2]))
 
     def insertion_sort(arr):
         frames = []
@@ -39,7 +39,7 @@ def plot(request,n):
 
 def result(request):
 
-    array = np.random.randint(0,50,100)
+    array = np.random.randint(0,50,10)
 
     def insertion_sort(arr):
         frames = []
