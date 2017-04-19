@@ -2,10 +2,24 @@
 <html lang="en">
   <head>
     {% load staticfiles %}
+
+    <style>
+      body{
+        font: 70px 70px/100px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .demo-logo{
+        font: 70px 70px/100px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+      .text-center{
+        font: 70px 70px/100px "Helvetica Neue", Helvetica, Arial, sans-serif;
+      }
+    </style>
     <meta charset="utf-8">
     <title>Data Sort - Implementation of Basic Sorting Algorithms</title>
 
     <meta name="viewport" content="width=1000, initial-scale=1.0, maximum-scale=1.0">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+
     <script src="{% static 'dist/js/vendor/jquery.min.js' %}"></script>
     <script src="{% static 'dist/js/flat-ui.min.js' %}"></script>
     <!-- Loading Bootstrap -->
@@ -20,13 +34,13 @@
       <script src="{% static 'dist/js/vendor/respond.min.js' %}"></script>
     <![endif]-->
   </head>
-  <body>
+  </body>
     <div class="container">
       <div class="demo-headline">
         <h3 class="demo-logo">
           <div><img src="{% static 'img/icons/svg/map.svg' %}" alt="Chart"></div>
           <!--<div class="logo"></div>-->
-          Plot & Sort
+          Data Sort
           <small>Implementation of Basic Sorting Algorithms</small>
         </h3>
       </div> <!-- /demo-headline -->
@@ -42,8 +56,17 @@
       <footer class="footer" style="background:white;color:black;">
         <div class="text-center">
           <small class="copyright">Designed & developed by <a style="color:#00B8D4;" href="https://www.linkedin.com/in/anish-narkhede-42354035/" target="_blank">Anish Narkhede</a></small>
+        </div><br/>
+        <div class="text-center">
+          <a style="padding-left:10px;padding-right:10px;" href="https://www.github.com/anish03/" target="_blank"><i class="fa fa-github fa-2x" aria-hidden="true"></i></a>
+
+          <a style="padding-left:10px;padding-right:10px;" href="https://twitter.com/anishnarkhede" target="_blank"><i class="fa fa-twitter fa-2x" aria-hidden="true"></i></a>
+
+          <a style="padding-left:10px;padding-right:10px;" href="https://www.instagram.com/anishn13/" target="_blank"><i class="fa fa-instagram fa-2x" aria-hidden="true"></i></a>
         </div>
+
     </footer>
   <br/><br/>
+      </div>
   </body>
 </html>
