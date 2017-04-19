@@ -105,7 +105,6 @@ ol.linenums {
   margin: 10px 0;
 }
 .demo-logo .logo {
-  background: url("../img/demo/logomask.png") center 0 no-repeat;
   background-size: 200px 181px;
   height: 181px;
   margin: 0 auto 26px;
@@ -268,7 +267,6 @@ ol.linenums {
   color: #1abc9c;
 }
 .demo-browser {
-  background: #2c3e50 url("./img/demo/browser.png") 0 0 no-repeat;
   background-size: 659px 42px;
   color: #ffffff;
   margin: 0 41px 140px 0;
@@ -296,7 +294,6 @@ ol.linenums {
   -webkit-font-smoothing: subpixel-antialiased;
 }
 .demo-browser-author {
-  background: url("../img/demo/browser-author.jpg") center no-repeat;
   border: 3px solid #ffffff;
   display: block;
   height: 84px;
@@ -331,10 +328,8 @@ ol.linenums {
 }
 @media only screen and (-webkit-min-device-pixel-ratio: 2), only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (-moz-min-device-pixel-ratio: 2), only screen and (-o-min-device-pixel-ratio: 3/2), only screen and (-o-min-device-pixel-ratio: 2/1), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 1.5), only screen and (min-device-pixel-ratio: 2) {
   .logo {
-    background-image: url("../img/demo/logo-mask-2x.png");
   }
   .demo-browser {
-    background-image: url("../img/demo/browser-2x.png");
   }
 }
 .demo-swatches-row [class*="col"] {
